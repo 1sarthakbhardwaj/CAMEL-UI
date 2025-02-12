@@ -1,1 +1,3 @@
 camel-ai[all]==0.2.21
+unstructured==0.16.20
+python-magic-bin
