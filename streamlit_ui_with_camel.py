@@ -116,10 +116,10 @@ def single_agent(query: str) -> str:
     if not retrieved_info:
         return "No relevant information found in the document."
     
-        deepseek_model = ModelFactory.create(
-            model_platform=ModelPlatformType.OPENAI,
-            model_type=ModelType.GPT_4O_MINI,
-        )
+    deepseek_model = ModelFactory.create(
+        model_platform=ModelPlatformType.OPENAI,
+        model_type=ModelType.GPT_4O_MINI,
+    )
     
     user_msg = str(retrieved_info)
     agent = ChatAgent(
