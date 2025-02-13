@@ -100,10 +100,9 @@ def single_agent(query: str) -> str:
     )
     
     auto_retriever = AutoRetriever(
-        vector_storage_local_path="local_data2/",
+        url_and_api_key=("https://101264f4-55e8-4e41-8cb3-6757c4a87757.eu-west-2-0.aws.cloud.qdrant.io:6333","qS9fQbp2BfyVA6h1i0U46haXhw0Sd9c-dGKN9toPiZIkaJxTOK2QlA"),
         storage_type=StorageType.QDRANT,
-        embedding_model=embedding_instance
-    )
+        embedding_model=embedding_instance)
 
     retrieved_info = auto_retriever.run_vector_retriever(
         query=query,
@@ -117,8 +116,8 @@ def single_agent(query: str) -> str:
         return "No relevant information found in the document."
     
     deepseek_model = ModelFactory.create(
-        model_platform=ModelPlatformType.OPENAI,
-        model_type=ModelType.GPT_4O_MINI,
+        model_platform=ModelPlatformType.DEEPSEEK,
+        model_type="deepseek-chat",
     )
     
     user_msg = str(retrieved_info)
