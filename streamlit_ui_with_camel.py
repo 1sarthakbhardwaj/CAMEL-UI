@@ -116,8 +116,8 @@ def single_agent(query: str) -> str:
         return "No relevant information found in the document."
     
     deepseek_model = ModelFactory.create(
-        model_platform=ModelPlatformType.DEEPSEEK,
-        model_type="deepseek-chat",
+        model_platform=ModelPlatformType.OPENAI,
+        model_type="gpt-4o-mini",
     )
     
     user_msg = str(retrieved_info)
